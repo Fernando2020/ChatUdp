@@ -1,21 +1,9 @@
 
 import java.util.Scanner;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author F
- */
 public class ServerInterfaceGrafica extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ServerInterfaceGrafica
-     */
+    boolean initialize = false;
     public ServerInterfaceGrafica() {
         initComponents();
         this.txtStatus.setEditable(false);
@@ -41,6 +29,8 @@ public class ServerInterfaceGrafica extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Porta: ");
+
+        txtPorta.setText("9998");
 
         btnEnviar.setText("Iniciar");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
@@ -101,6 +91,8 @@ public class ServerInterfaceGrafica extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        if(initialize) return;
+        initialize = true;
         InitializeServer();
     }//GEN-LAST:event_btnEnviarActionPerformed
 

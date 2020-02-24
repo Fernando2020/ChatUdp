@@ -22,14 +22,17 @@ class MessageReceiver implements Runnable {
 				// Verifica se o servidor retornou com um ERRO, que significa um close;
 				if (received.equals("ERRO")) {
 					login.dialogue.setTxtArea(received);
+                                        login.dialogue.scroolAuto();
 					Thread.sleep(1000);
 					System.exit(0);
 				} else if (received.equals("DESCONECTANDO")) {
 					login.dialogue.setTxtArea(received);
+                                        login.dialogue.scroolAuto();
 					Thread.sleep(1000);
 					System.exit(0);
 				} else {
 					login.dialogue.setTxtArea(received + "\n");
+                                        login.dialogue.scroolAuto();
 				}
 			} catch (Exception e) {
 				System.err.println(e);

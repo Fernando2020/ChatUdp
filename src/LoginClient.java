@@ -35,9 +35,12 @@ public class LoginClient extends javax.swing.JFrame {
 
         txtEndereco.setText("localhost");
 
-        txtPorta.setText("999");
-
-        txtNome.setText("fefefef");
+        txtPorta.setText("9998");
+        txtPorta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPortaActionPerformed(evt);
+            }
+        });
 
         btnEntrar.setText("Entrar");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -105,6 +108,16 @@ public class LoginClient extends javax.swing.JFrame {
     
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         if(initialize) return;    
+        
+        if(txtEndereco.getText()==null || txtEndereco.getText().trim().equals("")){
+            return;
+        }
+        if(txtPorta.getText()==null || txtPorta.getText().trim().equals("")){
+            return;
+        }
+        if(txtNome.getText()==null || txtNome.getText().trim().equals("")){
+            return;
+        }
         try{
                 DatagramSocket socket = new DatagramSocket();
                 String host =  txtEndereco.getText();
@@ -129,6 +142,10 @@ public class LoginClient extends javax.swing.JFrame {
                 this.txtStatus.setText(e.getMessage());
             }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void txtPortaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPortaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPortaActionPerformed
 
     /**
      * @param args the command line arguments

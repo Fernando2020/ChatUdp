@@ -90,7 +90,7 @@ public class ClientInterfaceGrafica extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnSair)
                     .addComponent(btnEnviar))
                 .addContainerGap(21, Short.MAX_VALUE))
@@ -138,6 +138,9 @@ public class ClientInterfaceGrafica extends javax.swing.JFrame {
     }
     public void setClickBtnEnviar(){
         this.btnEnviar.doClick();
+    }
+    public void scroolAuto(){
+        txtArea.setCaretPosition(txtArea.getText().length());
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
